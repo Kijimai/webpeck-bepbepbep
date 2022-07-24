@@ -1,5 +1,8 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
+const bundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 //webpack will look through this file to configure the build and check the mode -- otherwise it defaults to production
 
 //entry -- refers to the file that will be compiled
@@ -56,5 +59,6 @@ module.exports = {
       filename: "index.html",
       template: "src/template.html",
     }),
+    new BundleAnalyzerPlugin(),
   ],
 }
